@@ -1,0 +1,105 @@
+nav, p {
+  margin: 0 auto;
+  display: block;
+}
+
+p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+nav {
+  width: 550px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  float: left;
+  display: block;
+}
+
+nav li li {
+  float: none;
+  display: none;
+}
+
+nav li li a:hover {
+  background-color: red;
+}
+
+nav li ul {
+  position: absolute;
+}
+
+nav li:hover li {
+  display: block;
+}
+
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+  background-color: green;
+}
+
+nav a:hover {
+  color: blue;
+}
+
+#header {
+  height: 150px;
+}
+
+h1 {
+  font-size: 28px;
+  color: yellow;
+}
+
+h2 {
+  font-size: 21px;
+  color: yellow;
+}
+
+a {
+  color: white;
+}
+
+p {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(red));
+  background-image: -webkit-linear-gradient(left, white, red);
+  background-image: -moz-linear-gradient(left, white, red);
+  background-image: -ms-linear-gradient(left, white, red);
+  background-image: -o-linear-gradient(left, white, red);
+  background-image: linear-gradient(left, white, red);
+  background-repeat: repeat-x;
+  clear: left;
+  font-size: 25px;
+}
+
+.success, .error, .warning {
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  color: #444;
+}
+
+.success {
+  border: 2px solid green;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+.warning {
+  border: 2px solid orange;
+}
