@@ -14,3 +14,23 @@
     background-image: linear-gradient(left, $startColor, $endColor);
     background-repeat: repeat-x;
 }
+
+@mixin generateRow($number-of-images, $image-margin)
+{
+  width: ((100% - ($image-margin * $number-of-images)) / $number-of-images );
+  margin-right: $image-margin;
+
+  &:nth-child(#{$number-of-images}n)
+  {
+    margin-right: 0;
+  }
+}
+
+@mixin small-box($color)
+{
+  .small-box-#{$color}
+  {
+    @extend %small-box;
+    color: $color;
+  }
+}

@@ -2,7 +2,7 @@
 {
   @if lightness($backgroundColor) < 50%
   {
-    @return lighter($textColor, 30%);
+    @return lighten($textColor, 30%);
   }
   @else {
     @return darken($textColor, 40%);

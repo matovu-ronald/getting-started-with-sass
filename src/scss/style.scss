@@ -1,6 +1,7 @@
 @import "_mixins.scss";
 @import "_placeholders.scss";
 @import "_variables.scss";
+@import "_functions.scss";
 @import "_nav.scss";
 @import "_functions.scss";
 
@@ -55,4 +56,70 @@ p {
 .warning {
   border: 2px solid orange;
   @extend %message;
+}
+
+$number-of-images: 4;
+$image-margin: 2%;
+
+.image
+{
+
+  @include generateRow(5, 2%);
+  float: left;
+  background-color: #ececec;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+
+  @media (max-width: 640px)
+  {
+    @include generateRow(2, 5%);
+  }
+
+  @media (min-width: 641px) and (max-width: 1200px)
+  {
+      @include generateRow(4, 3%);
+  }
+
+  @media (min-width: 1201px)
+  {
+    @include generateRow(5, 2%);
+  }
+
+  .image-description
+  {
+    color: #555;
+  }
+
+  img
+  {
+
+    width: 100%;
+  }
+}
+
+@include small-box(red);
+@include small-box(yellow);
+@include small-box(gray);
+@include small-box(blue);
+
+// @for $i from 1 to 7
+// {
+//   h#{$i}
+//   {
+//     font-size: 55px - $i * 4;
+//   }
+// }
+
+$header-list: h1 h2 h3 h4 h5 h6 '.something_else';
+
+@each $current-header in $header-list
+{
+  $i:index($header-list, $current-header) + 2;
+  #{$current-header}
+  {
+    font-size: 55px - $i * 4;
+  }
 }
